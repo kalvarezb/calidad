@@ -32,9 +32,17 @@ namespace LibreriaTurismo.UnitTests
         [TestMethod]
         public void ValidarRut_RutIsValid_ReturnsClient()
         {
-            var cliente = new Cliente("not valid rut", "nombre", "12345678", "not valid email");
+            var cliente = new Cliente("173180101", "nombre", "12345678", "valid@email.com");
 
-            Assert.IsInstanceOfType(cliente, Cliente);
+            Assert.IsInstanceOfType(cliente, typeof(Cliente));
+        }
+
+        [TestMethod]
+        public void ValidarRut_RutIsValid_ReturnsRutWithCorrectFormat()
+        {
+            var cliente = new Cliente("17.318.010-1", "nombre", "12345678", "valid@email.com");
+            
+            Assert.IsTrue(cliente.Rut == "17.318.010-1");
         }
     }
 }
