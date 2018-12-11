@@ -36,7 +36,16 @@ namespace LibreriaTurismo.UnitTests
         [ExpectedException(typeof(ArgumentException))]
         public void NombreLength_NombreLengthIsOneCharacter_ReturnsArgumentException()
         {
-            var etapa = new Etapa(123, "a", "descripcion", 0);
+            var etapa = new Etapa(123, "a", "descripcion", 40);
+        }
+
+        [TestMethod]
+        public void NombreLength_NombreHasMoreThanTwoCharacters_ReturnsEtapa()
+        {
+            var etapa = new Etapa(123, "nombre", "descripcion", 40);
+
+            Assert.IsTrue(etapa.Nombre == "nombre");
+            Assert.IsInstanceOfType(etapa, typeof(Etapa));
         }
     }
 }
