@@ -44,5 +44,12 @@ namespace LibreriaTurismo.UnitTests
             
             Assert.IsTrue(cliente.Rut == "17.318.010-1");
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void NombreLength_NombreHasLessThanThreeCharacters_ReturnsArgumentException()
+        {
+            var cliente = new Cliente("173180101", "pi", "12345678", "valid@email.com");
+        }
     }
 }
