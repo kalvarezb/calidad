@@ -24,9 +24,9 @@ namespace LibreriaTurismo.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(FormatException))]
-        public void ValidarRut_RutIsNotValid_ReturnsArgumentException()
+        public void ValidarRut_RutIsNotValid_ReturnsFormatException()
         {
-            var cliente = new Cliente("not valid rut", "nombre", "12345678", "not valid email");
+            var cliente = new Cliente("not valid rut", "nombre", "12345678", "valid@email.com");
         }
 
         [TestMethod]
@@ -50,6 +50,20 @@ namespace LibreriaTurismo.UnitTests
         public void NombreLength_NombreHasLessThanThreeCharacters_ReturnsArgumentException()
         {
             var cliente = new Cliente("173180101", "pi", "12345678", "valid@email.com");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FormatException), "Doesn't validates invalid input types for Nombre field")]
+        public void NombreFormat_NombreHasNumbers_ReturnsArgumentException()
+        {
+            var cliente = new Cliente("173180101", "123name123", "12345678", "valid@email.com");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FormatException), "Doesn't validates invalid input types for Telefono field")]
+        public void TelefonoFormat_TelefonoHasLetters_ReturnsFormatException()
+        {
+            var cliente = new Cliente("173180101", "123name123", "12345678", "valid@email.com");
         }
     }
 }
