@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibreriaTaller.Etapa">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAABAQAAAQAAAACAAAEAgAABAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Etapa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaTaller.Ruta">
+    <Position X="3" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CAABAAAAAQAAAACBAQAAgAEBAAAAAAAABAIAAAgCAAA=</HashCode>
+      <FileName>Ruta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaTaller.NegocioTurismo">
+    <Position X="6.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAgAAAAAGAAAAAQAAIAQAA=</HashCode>
+      <FileName>NegocioTurismo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaTaller.Cliente">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAAAACgAAAAgAAAAAAAAAAAAAAAAgAAAAI=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
