@@ -52,6 +52,7 @@
     <Compile Include="ClienteTests.cs" />
     <Compile Include="EtapaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RutaTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
