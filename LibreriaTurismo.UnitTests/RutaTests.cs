@@ -38,6 +38,8 @@ namespace LibreriaTurismo.UnitTests
             ruta.AgregarEtapa(etapa1);
             ruta.AgregarEtapa(etapa2);
             ruta.AgregarEtapa(etapa3);
+
+            Assert.IsFalse(ruta.Etapas.Contains(etapa3));
         }
 
         [TestMethod]
@@ -48,13 +50,11 @@ namespace LibreriaTurismo.UnitTests
 
             ruta.AgregarEtapa(etapa1);
 
-            Console.WriteLine(ruta.Etapas.ToString());
-
             Assert.IsTrue(ruta.Etapas.Contains(etapa1));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Doesn't validates maximum of 8 hours")]
+        [ExpectedException(typeof(ArgumentException), "Doesn't validates duplicity of etapas within ruta")]
         public void AgregarEtapa_ShouldNotAddExistentEtapaToRuta_ReturnsArgumentException()
         {
             var etapa1 = new Etapa(123, "etapa 1", "descripcion", 200);
@@ -64,7 +64,16 @@ namespace LibreriaTurismo.UnitTests
             ruta.AgregarEtapa(etapa1);
             ruta.AgregarEtapa(etapa2);
 
-            Assert.IsTrue(ruta.Etapas.Contains(etapa1));
+            Assert.IsFalse(ruta.Etapas.Contains(etapa2));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Doesn't validate negative values for arriendoFurgon")]
+        public void ArriendoFurgonValue_ShouldNotBeNegative_ReturnsArgumentException()
+        {
+            var ruta = new Ruta(123, "ruta 1", 40000, 30000, -20000);
+
+            Assert.IsNull(ruta);
         }
 
 
