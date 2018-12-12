@@ -34,7 +34,7 @@ namespace LibreriaTurismo.UnitTests
         }
 
         [TestMethod]
-        public void ValidarRut_RutIsValid_ReturnsClient()
+        public void ValidarRut_RutIsValidWithoutPointsAndHyphen_ReturnsRutWithCorrectFormat()
         {
             var cliente = new Cliente("173180101", "name", "12345678", "valid@email.com");
 
@@ -44,7 +44,7 @@ namespace LibreriaTurismo.UnitTests
         }
 
         [TestMethod]
-        public void ValidarRut_RutIsValid_ReturnsRutWithCorrectFormat()
+        public void ValidarRut_RutIsValidWithPointsAndHypen_ReturnsRutWithCorrectFormat()
         {
             var cliente = new Cliente("17.318.010-1", "name", "12345678", "valid@email.com");
 
