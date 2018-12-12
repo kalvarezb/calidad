@@ -75,7 +75,7 @@ namespace LibreriaTurismo.UnitTests
         [ExpectedException(typeof(FormatException), "Doesn't validates invalid input types for Telefono field")]
         public void TelefonoFormat_TelefonoHasLetters_ReturnsFormatException()
         {
-            var cliente = new Cliente("173180101", "name", "12345678", "valid@email.com");
+            var cliente = new Cliente("173180101", "name", "not valid phone", "valid@email.com");
 
             Assert.IsNull(cliente);
         }

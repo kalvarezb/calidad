@@ -16,6 +16,7 @@ namespace LibreriaTurismo.UnitTests
 
             Assert.IsTrue(etapa.Codigo == 123);
             Assert.IsInstanceOfType(etapa, typeof(Etapa));
+            Assert.IsNotNull(etapa);
         }
 
         [TestMethod]
@@ -30,6 +31,8 @@ namespace LibreriaTurismo.UnitTests
         public void TiempoDuration_DurationIsLessThanOneMinute_ReturnsArgumentException()
         {
             var etapa = new Etapa(123, "etapa 1", "descripcion", 0);
+
+            Assert.IsNull(etapa);
         }
 
         [TestMethod]
@@ -37,15 +40,28 @@ namespace LibreriaTurismo.UnitTests
         public void NombreLength_NombreLengthIsOneCharacter_ReturnsArgumentException()
         {
             var etapa = new Etapa(123, "a", "descripcion", 40);
+
+            Assert.IsNull(etapa);
         }
 
         [TestMethod]
         public void NombreLength_NombreHasMoreThanTwoCharacters_ReturnsEtapa()
         {
-            var etapa = new Etapa(123, "nombre", "descripcion", 40);
+            var etapa = new Etapa(123, "nombre123", "descripcion", 40);
 
-            Assert.IsTrue(etapa.Nombre == "nombre");
+            Assert.IsTrue(etapa.Nombre == "nombre123");
             Assert.IsInstanceOfType(etapa, typeof(Etapa));
+            Assert.IsNotNull(etapa);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DescripcionLength_DescripcionHasZeroCharacters_ReturnsArgumentException()
+        {
+            var etapa = new Etapa(123, "nombre123", "", 40);
+
+            Assert.IsNull(etapa);
+
         }
     }
 }
