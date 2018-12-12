@@ -10,7 +10,7 @@ namespace LibreriaTurismo.UnitTests
         [TestMethod]
         public void ValidarEmail_EmailIsValid_ReturnsTrue()
         {
-            var email = new Cliente("173180101", "name", "12345678", "email@email.com").validarEmail("email@email.com");
+            var email = new Cliente("173180101", "name", "12345678", "valid@email.com").validarEmail("valid@email.com");
           
             Assert.IsTrue(email);
         }
@@ -40,6 +40,7 @@ namespace LibreriaTurismo.UnitTests
 
             Assert.IsNotNull(cliente);
             Assert.IsInstanceOfType(cliente, typeof(Cliente));
+            Assert.IsTrue(cliente.Rut == "173180101");
         }
 
         [TestMethod]
